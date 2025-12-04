@@ -211,6 +211,13 @@ class Frame extends AbstractStyle
     private $position;
 
     /**
+     * alternative text (image only)
+     *
+     * @var string
+     */
+    private $alt = '';
+
+    /**
      * Create a new instance.
      *
      * @param array $style
@@ -679,6 +686,30 @@ class Frame extends AbstractStyle
     public function setPosition($value = null)
     {
         $this->position = $this->setIntVal($value, null);
+
+        return $this;
+    }
+
+    /**
+     * Get alt text.
+     *
+     * @return string
+     */
+    public function getAltText()
+    {
+        return $this->alt;
+    }
+
+    /**
+     * Set alt text.
+     *
+     * @param string $value
+     *
+     * @return self
+     */
+    public function setAltText($value = '')
+    {
+        $this->alt = $value;
 
         return $this;
     }

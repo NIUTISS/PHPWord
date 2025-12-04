@@ -268,4 +268,30 @@ class Image extends Frame
 
         return $this;
     }
+
+    /**
+     * Get alt text.
+     *
+     * @return string
+     */
+    public function getAlt()
+    {
+        return $this->getAltText();
+    }
+
+    /**
+     * Set alt text.
+     *
+     * @ignoreScrutinizerPatch
+     *
+     * @param string $value
+     *
+     * @return self
+     */
+    public function setAlt($value = '')
+    {
+        $this->setAltText($value);
+
+        return $this;
+    }
 }

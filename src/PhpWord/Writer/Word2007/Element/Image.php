@@ -81,6 +81,9 @@ class Image extends AbstractElement
         $xmlWriter->writeAttribute('type', '#_x0000_t75');
         $xmlWriter->writeAttribute('stroked', 'f');
 
+        //add alt tag to v:shape element
+        $xmlWriter->writeAttribute('alt', $style->getAlt());
+
         $styleWriter->write();
 
         $xmlWriter->startElement('v:imagedata');

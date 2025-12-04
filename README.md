@@ -1,8 +1,8 @@
-# [WIP] PHPWord
+# PHPWord
 
 [Source](https://github.com/NIUTISS/PHPWord)
 
-A pure PHP library for reading and writing word processing documents. Fork adds support for image alt attribute. Work in Progress.
+A pure PHP library for reading and writing word processing documents. Fork adds support for image alt attribute.
 
 ## Installation using composer
 
@@ -17,7 +17,7 @@ Update composer.json to include the following:
     }
   ],
   "require": {
-    "NIUTISS/PHPWord": "main"
+    "niutiss/phpword": "dev-main"
   }
 }
 ```

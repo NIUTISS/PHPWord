@@ -17,7 +17,12 @@ $section->addImage(__DIR__ . '/resources/_mars.jpg');
 
 printSeparator($section);
 $section->addText('Local image with styles:');
-$section->addImage(__DIR__ . '/resources/_earth.jpg', ['width' => 210, 'height' => 210, 'alignment' => PhpOffice\PhpWord\SimpleType\Jc::CENTER]);
+$section->addImage(__DIR__ . '/resources/_earth.jpg', [
+    'width' => 210,
+    'height' => 210,
+    'alignment' => PhpOffice\PhpWord\SimpleType\Jc::CENTER,
+    'alt' => "Image of Earth"
+]);
 
 // Remote image
 printSeparator($section);
@@ -49,6 +54,7 @@ foreach ($wrappingStyles as $wrappingStyle) {
             'wrappingStyle' => $wrappingStyle,
             'wrapDistanceRight' => Converter::cmToPoint(1),
             'wrapDistanceBottom' => Converter::cmToPoint(1),
+            'alt' => "Image of Earth"
         ]
     );
     $section->addText($text);

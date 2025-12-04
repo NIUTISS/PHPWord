@@ -13,18 +13,18 @@ Update composer.json to include the following:
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/NIUTISS/PHPWord.git"
+      "url": "https://github.com/niutiss/phpword"
     }
   ],
   "require": {
-    "niutiss/phpword": "dev-main"
+    "phpoffice/phpword": "dev-main"
   }
 }
 ```
 
 Run composer install
 
-## Usage
+## Usage Example
 
 ```php
 // Add an image with alt text

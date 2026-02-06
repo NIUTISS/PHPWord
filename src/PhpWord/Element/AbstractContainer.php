@@ -87,12 +87,35 @@ abstract class AbstractContainer extends AbstractElement
     public function __call($function, $args)
     {
         $elements = [
-            'Text', 'TextRun', 'Bookmark', 'Link', 'PreserveText', 'TextBreak',
-            'ListItem', 'ListItemRun', 'Table', 'Image', 'Object', 'OLEObject',
-            'Footnote', 'Endnote', 'CheckBox', 'TextBox', 'Field',
-            'Line', 'Shape', 'Title', 'TOC', 'PageBreak',
-            'Chart', 'FormField', 'SDT', 'Comment',
-            'Formula', 'Ruby',
+            'Text',
+            'TextRun',
+            'Bookmark',
+            'Link',
+            'PreserveText',
+            'TextBreak',
+            'ListItem',
+            'ListItemRun',
+            'Table',
+            'Image',
+            'Object',
+            'OLEObject',
+            'Footnote',
+            'Endnote',
+            'CheckBox',
+            'TextBox',
+            'Field',
+            'Line',
+            'Shape',
+            'Title',
+            'TOC',
+            'PageBreak',
+            'Chart',
+            'FormField',
+            'SDT',
+            'Comment',
+            'Formula',
+            'Ruby',
+            'TextBoxShape'
         ];
         $functions = [];
         foreach ($elements as $element) {
@@ -230,7 +253,16 @@ abstract class AbstractContainer extends AbstractElement
     private function checkValidity($method)
     {
         $generalContainers = [
-            'Section', 'Header', 'Footer', 'Footnote', 'Endnote', 'Cell', 'TextRun', 'TextBox', 'ListItemRun', 'TrackChange',
+            'Section',
+            'Header',
+            'Footer',
+            'Footnote',
+            'Endnote',
+            'Cell',
+            'TextRun',
+            'TextBox',
+            'ListItemRun',
+            'TrackChange',
         ];
 
         $validContainers = [
@@ -246,12 +278,18 @@ abstract class AbstractContainer extends AbstractElement
             'FormField' => $generalContainers,
             'SDT' => $generalContainers,
             'TrackChange' => $generalContainers,
+
+            // Jesse Llamas 1/30/2026 added TextBox as a valid container to TextRun
             'TextRun' => ['Section', 'Header', 'Footer', 'Cell', 'TextBox', 'TrackChange', 'ListItemRun'],
+
             'ListItem' => ['Section', 'Header', 'Footer', 'Cell', 'TextBox'],
             'ListItemRun' => ['Section', 'Header', 'Footer', 'Cell', 'TextBox'],
             'Table' => ['Section', 'Header', 'Footer', 'Cell', 'TextBox'],
             'CheckBox' => ['Section', 'Header', 'Footer', 'Cell', 'TextRun'],
-            'TextBox' => ['Section', 'Header', 'Footer', 'Cell'],
+
+            // Jesse Llamas 1/30/2026 added TextRun as a valid container to TextBox
+            'TextBox' => ['Section', 'Header', 'Footer', 'Cell', 'TextRun'],
+
             'Footnote' => ['Section', 'TextRun', 'Cell', 'ListItemRun'],
             'Endnote' => ['Section', 'TextRun', 'Cell'],
             'PreserveText' => ['Section', 'Header', 'Footer', 'Cell'],

@@ -2,7 +2,7 @@
 
 [Source](https://github.com/NIUTISS/PHPWord)
 
-A pure PHP library for reading and writing word processing documents. Fork adds support for image alt attribute.
+A pure PHP library for reading and writing word processing documents. Fork adds support for image alt attribute, TextRun as valid container for TextBox.
 
 ## Installation using composer
 
